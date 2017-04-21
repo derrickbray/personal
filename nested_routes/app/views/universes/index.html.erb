@@ -1,0 +1,59 @@
+<div class="hero">
+  <div class="container">
+      <div class="hero-box">
+        <div class="hero__title">MYTHOS</div>
+        <div class="hero__tag">Create Your Own Universe</div>
+      </div>
+  </div>
+</div>
+
+<section class="about">
+  <div class="container">
+    <div class="about-content">
+      <h1 class="about-content__title">What is Mythos?</h1>
+      <div class="about-content__description">Mythos is an open source application where anyone can create their own mythology.  If you want to build a pantheon similar to the Greeks or Vikings, do it. Or build something completely different. Once you create your Universe add individual Myths with Gods, Demi-Gods, and Heroes.  If you want you can also add Myths to other Universes.  So keep an open mind and have fun.</div>
+      <div class="button-box">
+        <div class="new-link">
+          <%= link_to 'Build a New Universe', new_universe_path %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="main">
+
+    <h1 class="title">Read, Create, or Add to Universes</h1>
+    <!-- <div class="title">Check out the Universes Below</div> -->
+
+</section>
+
+    <div class="container">
+
+      <p id="notice"><%= notice %></p>
+      <% @universes.each do |universe| %>
+
+      <div class="card">
+
+        <div class="card-content">
+          <div class="card-content__title"><%= universe.title %></div>
+          <div class="card-content__item">Created By: <%= universe.author %></div>
+          <div class="card-content__text"><%= universe.description %></div>
+
+          <div class="button-box">
+              <div class="new-link">
+                <div><%= link_to 'More Detail', universe %></div>
+              </div>
+              <div class="new-link">
+                <div><%= link_to 'Edit', edit_universe_path(universe) %></div>
+              </div>
+              <!-- <div class="new-link">
+                <div><%= link_to 'Destroy', universe, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+              </div> -->
+          </div>
+        </div>
+
+      </div>
+      <% end %>
+    </div>

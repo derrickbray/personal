@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <div class="card-content__title">
+              <%= @universe.title %>
+            </div>
+
+            <div class="card-content__item">Author:
+              <%= @universe.author %>
+            </div>
+
+            <div class="card-content__text">
+              <%= @universe.description %>
+            </div>
+
+            <div class="button-box">
+                <div class="new-link"><%= link_to 'Edit', edit_universe_path(@universe) %></div>
+                <!-- <div class="new-link"><%= link_to 'Destroy', @universe, method: :delete, data: { confirm: 'Are you sure?' } %></div> -->
+                <div class="new-link"><%= link_to 'Myths', universe_myths_path(@universe, @myths) %></div>
+                <div class="new-link"><%= link_to 'Gods', universe_gods_path(@universe, @gods) %></div>
+                <div class="new-link"><%= link_to 'Demi-Gods', universe_demi_gods_path(@universe, @demi_gods) %></div>
+                <div class="new-link"><%= link_to 'Heroes', universe_heros_path(@universe, @heros) %></div>
+                <div class="new-link"><%= link_to 'Back', universes_path %></div>
+
+            </div>
+        </div>
+    </div>
+</div>

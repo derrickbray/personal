@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &:after,
+  &:before {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#notice {
+  color: green;
+  margin: 0;
+}
+
+.container {
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.nav {
+  background: #704241;
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    font-size: 2rem;
+    font-family: 'Dosis', sans-serif;
+
+    a {
+      color: white;
+
+        &:hover {
+          text-decoration: underline;
+        }
+    }
+  }
+}

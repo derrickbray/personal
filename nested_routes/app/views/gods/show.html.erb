@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+
+            <div class="card-content__title"><%= @god.universe.title %></div>
+            <div class="card-content__title"><%= @god.name %></div>
+            <div class="card-content__item">Parents: <%= @god.parent %></div>
+            <div class="card-content__item">Children: <%= @god.child %></div>
+            <div class="card-content__checkbox">Cannon: <%= @god.is_cannon %></div>
+            <div class="card-content__checkbox">Votes: <%= @god.up_vote %></div>
+            <div class="card-content__text"><%= @god.description %></div>
+
+            <div class="button-box">
+                <%= link_to 'Edit Again', edit_universe_god_path(@god.universe, @god), class:'new-link' %>
+                <%= link_to 'Back', universe_gods_path(@god.universe), class:'new-link' %>
+            </div>
+        </div>
+    </div>
+</div>

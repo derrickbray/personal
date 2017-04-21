@@ -1,0 +1,59 @@
+<%= form_for([@hero.universe, @hero]) do |f| %>
+  <% if @hero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hero.errors.count, "error") %> prohibited this hero from being saved:</h2>
+
+      <ul>
+      <% @hero.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+      <div class="card">
+          <div class="card-content">
+
+              <div class="card-form">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'card__form-string' %>
+              </div>
+              <div class="card-form">
+                <%= f.label :parent %>
+                <%= f.text_field :parent, class: 'card__form-string' %>
+              </div>
+              <div class="card-form">
+                <%= f.label :child %>
+                <%= f.text_field :child, class: 'card__form-string' %>
+              </div>
+              <!-- <div class="card-form">
+                <%= f.label :attributes %>
+                <%= f.text_area :attributes, class: 'card__form-text' %>
+              </div> -->
+              <div class="card-form">
+                  <%= f.label :description %>
+                  <%= f.text_area :description, class: 'card__form-text' %>
+              </div>
+              <div class="card-form">
+                <%= f.label :up_vote %>
+                <%= f.number_field :up_vote, class: 'card__form-string' %>
+              </div>
+              <div class="card-form">
+                  <%= f.label :is_approved %>
+                  <%= f.check_box :is_approved, class: 'card__form-checkbox' %>
+              </div>
+              <div class="card-form">
+                  <%= f.label :is_cannon %>
+                  <%= f.check_box :is_cannon, class: 'card__form-checkbox' %>
+              </div>
+              <div class="button-box">
+                  <%= f.submit class:'new-link' %>
+                  <%= link_to 'Back', universe_heros_path(@hero.universe) , class:'new-link' %>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+<% end %>
